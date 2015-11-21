@@ -28,6 +28,7 @@ public class SQLController {
 
     public void close() {
         dbManager.close();
+        //db.close();
     }
 
 
@@ -38,23 +39,39 @@ public class SQLController {
         cv.put(MyDbManager.COMMODITY_NAME, commodityName);
         cv.put(MyDbManager.QUANTITY, quantity);
         db.insert(MyDbManager.TABLE_COMMODITY, null, cv);
+        //close();
 
     }
 
+    public String databaseToString(){
+        String dbString = "";
+        SQLiteDatabase db1 = dbManager.getWritableDatabase();
+        String query = "SELECT * FROM " + MyDbManager.TABLE_COMMODITY + " WHERE 1";
+        Cursor c = db1.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            if (c.getString(c.getColumnIndex("commodityName")) != null && c.getString(c.getColumnIndex("quantity")) != null) {
+                dbString += c.getString(c.getColumnIndex("commodityName"));
+                dbString += "\t:\t";
+                dbString += c.getString(c.getColumnIndex("quantity"));
+                dbString += "\n";
+            }
+            c.moveToNext();
+        }
+        db1.close();
+        return dbString;
+    }
 
     public Cursor readData() {
-
         String[] allColumns = new String[] {MyDbManager.COMMODITY_NAME,
                 MyDbManager.QUANTITY };
-
         Cursor c = db.query(MyDbManager.TABLE_COMMODITY, allColumns, null, null, null,
                 null, null);
-
         if (c != null) {
             c.moveToFirst();
         }
+        //close();
         return c;
-
     }
 
     public void deleteData(String commodityName) {
@@ -63,10 +80,7 @@ public class SQLController {
     }
 
     public void deleteAllData(){
-
         db.execSQL("DELETE * FROM " + MyDbManager.TABLE_COMMODITY + ";");
-
-
     }
 
 }

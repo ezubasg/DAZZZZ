@@ -126,24 +126,17 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send List"
-        android:id="@+id/btn_send"
-        android:layout_below="@+id/ETquantity"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="btn_sendClicked" />
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete"
         android:id="@+id/btn_delete"
+        android:onClick="btn_deleteClicked"
         android:layout_below="@+id/ETquantity"
-        android:layout_centerHorizontal="true"
-        android:onClick="btn_deleteClicked" />
+        android:layout_alignRight="@+id/ETquantity"
+        android:layout_alignEnd="@+id/ETquantity" />
 
 
 </RelativeLayout>
