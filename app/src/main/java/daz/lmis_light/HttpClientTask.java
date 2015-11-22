@@ -2,16 +2,23 @@ package daz.lmis_light;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.github.kevinsawicki.http.HttpRequest;
 import com.google.gson.Gson;
 
+<<<<<<< HEAD
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+=======
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
 /**
  * Created by Zubair<rajazubair.asghar@gmail.com> on 15.11.15.;
  */
@@ -26,12 +33,18 @@ public class HttpClientTask extends AsyncTask<String,Void, JSONResponse> {
     private static String contentTypeJson = "application/json";
     private static String userName = "system";
     private static String passwd = "System123";
+<<<<<<< HEAD
     //private Users user;
     //private Spinner spinner;
     //private MainActivity mainActivity;
 
 
 
+=======
+
+
+
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
     public  HttpClientTask()
     {}
 
@@ -48,7 +61,11 @@ public class HttpClientTask extends AsyncTask<String,Void, JSONResponse> {
 
             message = new Message();
             message.setText("Following mentioned commodities required.\n" + urls[0] + "\nRegards");
+<<<<<<< HEAD
             message.setSubject("Commodity order form");
+=======
+            message.setSubject("Logistic Message");
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
             message.setUsers(users);
 
             Gson gson = new Gson();

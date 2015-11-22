@@ -26,8 +26,13 @@ public class SQLController {
     }
 
     public void close() {
+<<<<<<< HEAD
         dbManager.close();
         //db.close();
+=======
+       // dbManager.close();
+        db.close();
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
     }
 
 
@@ -37,15 +42,30 @@ public class SQLController {
         cv.put(MyDbManager.COMMODITY_NAME, commodityName);
         cv.put(MyDbManager.QUANTITY, quantity);
         db.insert(MyDbManager.TABLE_COMMODITY, null, cv);
+<<<<<<< HEAD
         //close();
+=======
+        close();
+
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
     }
 
     public String databaseToString(){
         String dbString = "";
         SQLiteDatabase db1 = dbManager.getWritableDatabase();
         String query = "SELECT * FROM " + MyDbManager.TABLE_COMMODITY + " WHERE 1";
+<<<<<<< HEAD
         Cursor c = db1.rawQuery(query, null);
         c.moveToFirst();
+=======
+
+        //Cursor points to a location in your results
+        Cursor c = db1.rawQuery(query, null);
+        //Move to the first row in your results
+        c.moveToFirst();
+
+        //Position after the last row means the end of the results
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
         while (!c.isAfterLast()) {
             if (c.getString(c.getColumnIndex("commodityName")) != null && c.getString(c.getColumnIndex("quantity")) != null) {
                 dbString += c.getString(c.getColumnIndex("commodityName"));
@@ -53,6 +73,11 @@ public class SQLController {
                 dbString += c.getString(c.getColumnIndex("quantity"));
                 dbString += "\n";
             }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
             c.moveToNext();
         }
         db1.close();
@@ -67,7 +92,12 @@ public class SQLController {
         if (c != null) {
             c.moveToFirst();
         }
+<<<<<<< HEAD
         //close();
+=======
+
+        close();
+>>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
         return c;
     }
 
