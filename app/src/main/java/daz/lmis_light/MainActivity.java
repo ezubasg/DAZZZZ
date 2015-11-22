@@ -162,8 +162,5 @@ public class MainActivity extends Activity {
         }
         sqlController.close();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> bda9beb33f7dd1fb85da711f327ea52b21fada68
 }
