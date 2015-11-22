@@ -26,6 +26,9 @@ public class HttpClientTask extends AsyncTask<String,Void, JSONResponse> {
     private static String contentTypeJson = "application/json";
     private static String userName = "system";
     private static String passwd = "System123";
+    //private Users user;
+    //private Spinner spinner;
+    //private MainActivity mainActivity;
 
 
 
@@ -45,7 +48,7 @@ public class HttpClientTask extends AsyncTask<String,Void, JSONResponse> {
 
             message = new Message();
             message.setText("Following mentioned commodities required.\n" + urls[0] + "\nRegards");
-            message.setSubject("Logistic Message");
+            message.setSubject("Commodity order form");
             message.setUsers(users);
 
             Gson gson = new Gson();

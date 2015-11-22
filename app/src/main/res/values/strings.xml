@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">LMIS Light</string>
     <string name="action_settings">Settings</string>
+    <string-array name="user_names">
+        <item>John Barnes</item>
+        <item>Kevin Boateng</item>
+        <item>Suleimane Diawara</item>
+        <item>Seydou Keita</item>
+        <item>Didier Konan</item>
+    </string-array>
 </resources>

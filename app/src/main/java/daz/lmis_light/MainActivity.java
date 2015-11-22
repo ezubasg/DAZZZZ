@@ -22,12 +22,17 @@ public class MainActivity extends Activity {
     TableLayout table_layout;
     EditText ETcommodityName, ETquantity;
     SQLController sqlController;
+    //String[] users;
+    //Spinner spinner;
+    //String selectedUser;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //selectUser();
         sqlController = new SQLController(this);
         sqlController.open();
         ETcommodityName = (EditText) findViewById(R.id.ETcommodityName);
@@ -35,6 +40,29 @@ public class MainActivity extends Activity {
         table_layout = (TableLayout) findViewById(R.id.tableLayout1);
         makeTable();
     }
+
+    /*public void selectUser(){
+        users = getResources().getStringArray(R.array.user_names);
+        //spinner = (Spinner) findViewById(R.id.user_spinner);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, users);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                spinner.setSelection(position);
+                selectedUser = (String) spinner.getSelectedItem();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+    }*/
 
     public void btn_addClicked(View view){
         table_layout.removeAllViews();
@@ -134,4 +162,5 @@ public class MainActivity extends Activity {
         }
         sqlController.close();
     }
+
 }

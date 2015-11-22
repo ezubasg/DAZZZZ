@@ -23,7 +23,6 @@ public class SQLController {
         dbManager = new MyDbManager(context);
         db = dbManager.getWritableDatabase();
         return this;
-
     }
 
     public void close() {
@@ -34,13 +33,11 @@ public class SQLController {
 
 
     public void addData(String commodityName, String quantity) {
-
         ContentValues cv = new ContentValues();
         cv.put(MyDbManager.COMMODITY_NAME, commodityName);
         cv.put(MyDbManager.QUANTITY, quantity);
         db.insert(MyDbManager.TABLE_COMMODITY, null, cv);
         //close();
-
     }
 
     public String databaseToString(){
@@ -77,10 +74,6 @@ public class SQLController {
     public void deleteData(String commodityName) {
         db.execSQL("DELETE FROM " + MyDbManager.TABLE_COMMODITY + " WHERE " + MyDbManager.COMMODITY_NAME +
                 "=\"" + commodityName + "\";");
-    }
-
-    public void deleteAllData(){
-        db.execSQL("DELETE * FROM " + MyDbManager.TABLE_COMMODITY + ";");
     }
 
 }

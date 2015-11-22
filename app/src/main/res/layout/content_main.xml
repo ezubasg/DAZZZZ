@@ -10,7 +10,8 @@
     tools:showIn="@layout/activity_main" tools:context=".MainActivity"
     android:focusable="false"
     android:touchscreenBlocksFocus="false"
-    android:textAlignment="center">
+    android:textAlignment="center"
+    android:background="#ffffff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
         android:layout_below="@+id/commodityOrderForm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="50dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -60,7 +61,9 @@
         android:layout_below="@+id/ETquantity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="btn_addClicked" />
+        android:onClick="btn_addClicked"
+        android:background="#78ef65"
+        android:elegantTextHeight="false" />
 
 
     <LinearLayout
@@ -87,7 +90,7 @@
             android:layout_height="match_parent"
             android:padding="10dp"
             android:shrinkColumns="*"
-            android:stretchColumns="*" >
+            android:stretchColumns="*">
         </TableLayout>
 
 
@@ -122,7 +125,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Quantity"
         android:id="@+id/quantity"
-        android:layout_below="@+id/textView"
+        android:layout_above="@+id/linearLayout"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
@@ -136,7 +139,41 @@
         android:onClick="btn_deleteClicked"
         android:layout_below="@+id/ETquantity"
         android:layout_alignRight="@+id/ETquantity"
-        android:layout_alignEnd="@+id/ETquantity" />
+        android:layout_alignEnd="@+id/ETquantity"
+        android:background="#e66a6a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/commodityOrderForm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="SELECT USER"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/commodityOrderForm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>-->
+
+    <!--<Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_spinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/commodityName"
+        android:layout_toEndOf="@+id/commodityName"
+        android:layout_below="@+id/commodityOrderForm"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="10dp"
+        android:layout_alignBottom="@+id/textView3" />-->
 
 
 </RelativeLayout>
